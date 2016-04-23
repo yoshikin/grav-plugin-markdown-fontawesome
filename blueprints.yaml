@@ -1,0 +1,23 @@
+name: Markdown Font Awesome
+version: 1.0.0
+description: "Converts Github emoji-style syntax to Font Awesome html tag"
+icon: flag
+author:
+  name: Joshua Lotz
+  email: joshualotz@gmail.com
+  url: https://github.com/yoshikin
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
