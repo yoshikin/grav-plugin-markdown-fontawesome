@@ -2,7 +2,7 @@
 
 The **Font Awesome plugin** for [Grav](http://github.com/getgrav/grav) allows you to use Font Awesome icons inline with markdown by wrapping the icon name in colons (Github/Slack "emoji style"):
 
-`:fa-thumbs-up:`
+![Font Awesome flag icon](assets/fa-flag-to-icon.png)
 
 # Prerequisites
 
