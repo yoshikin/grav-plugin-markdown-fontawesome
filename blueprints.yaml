@@ -1,6 +1,6 @@
 name: Markdown Font Awesome
-version: 1.0.0
-description: "Converts Github emoji-style syntax to Font Awesome html tag"
+version: 1.0.1
+description: "Adds support for Font Awesome icons in Markdown using :emoji: syntax"
 icon: flag
 author:
   name: Joshua Lotz
