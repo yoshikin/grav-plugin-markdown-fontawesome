@@ -21,12 +21,13 @@ class MarkdownFontAwesomePlugin extends Plugin
         $markdown = $event['markdown'];
 
         // Initialize Text example
-        $markdown->addInlineType(':', 'FontAwesome');
+        $markdown->addInlineType(':', 'FontAwesome');     // Backwards compatibility
+        $markdown->addInlineType(':', 'FontAwesomePro');  // Widened support
 
         // Add function to handle this
         $markdown->inlineFontAwesome = function($excerpt) {
             // Search $excerpt['text'] for regex and store whole matching string in $matches[0], store icon name in $matches[1]
-            if (preg_match('/:fa-([-\w]+):/', $excerpt['text'], $matches))
+            if (preg_match('/:fa-([a-zA-Z0-9- ]+):/', $excerpt['text'], $matches))
             {
                 return array(
                     'extent' => strlen($matches[0]),
@@ -35,6 +36,24 @@ class MarkdownFontAwesomePlugin extends Plugin
                         'text' => '',
                         'attributes' => array(
                             'class' => 'fa fa-'.$matches[1],
+                        ),
+                    ),
+                );
+            }
+        };
+
+        // Add function to handle this
+        $markdown->inlineFontAwesomePro = function($excerpt) {
+            // Search $excerpt['text'] for regex and store whole matching string in $matches[0], store icon name in $matches[1]
+            if (preg_match('/:fa([srlb]?) fa-([a-zA-Z0-9- ]+):/', $excerpt['text'], $matches))
+            {
+                return array(
+                    'extent' => strlen($matches[0]),
+                    'element' => array(
+                        'name' => 'i',
+                        'text' => '',
+                        'attributes' => array(
+                            'class' => 'fa'.$matches[1].' fa-'.$matches[2],
                         ),
                     ),
                 );
