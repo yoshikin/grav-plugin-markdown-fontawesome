@@ -1,3 +1,11 @@
+# v1.0.3
+## 2019-05-03
+
+1. [](#improved)
+    * Fixed issues with other colons inline with icons, eg. in times.
+    * Documented conflict with Markdown Extra definition lists.
+
+
 # v1.0.2
 ## 2019-04-20
 

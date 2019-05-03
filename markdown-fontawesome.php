@@ -21,13 +21,12 @@ class MarkdownFontAwesomePlugin extends Plugin
         $markdown = $event['markdown'];
 
         // Initialize Text example
-        $markdown->addInlineType(':', 'FontAwesome');     // Backwards compatibility
-        $markdown->addInlineType(':', 'FontAwesomePro');  // Widened support
+        $markdown->addInlineType(':', 'FontAwesome');
 
         // Add function to handle this
         $markdown->inlineFontAwesome = function($excerpt) {
             // Search $excerpt['text'] for regex and store whole matching string in $matches[0], store icon name in $matches[1]
-            if (preg_match('/:fa-([a-zA-Z0-9- ]+):/', $excerpt['text'], $matches))
+            if (preg_match('/^:fa-([a-zA-Z0-9- ]+):/', $excerpt['text'], $matches))
             {
                 return array(
                     'extent' => strlen($matches[0]),
@@ -40,12 +39,7 @@ class MarkdownFontAwesomePlugin extends Plugin
                     ),
                 );
             }
-        };
-
-        // Add function to handle this
-        $markdown->inlineFontAwesomePro = function($excerpt) {
-            // Search $excerpt['text'] for regex and store whole matching string in $matches[0], store icon name in $matches[1]
-            if (preg_match('/:fa([srlb]?) fa-([a-zA-Z0-9- ]+):/', $excerpt['text'], $matches))
+            elseif (preg_match('/^:fa([srlb]?) fa-([a-zA-Z0-9- ]+):/', $excerpt['text'], $matches))
             {
                 return array(
                     'extent' => strlen($matches[0]),

@@ -10,7 +10,7 @@ The plugin works by looking for colon-wrapped icon names starting with the `:fa-
 
 This plugin doesn't contain the actual Font Awesome fonts, so make sure you are using a plugin or theme (such as Learn2 or Antimatter) that include the Font Awesome assets.
 
-Also, Markdown Extra must be disabled.
+Also, this plugin conflicts with definition lists in Markdown Extra; if enabled, icons appearing at the start of a line will be treated as part of definitions and will be broken. This currently appears to be the only conflict.
 
 ## Manual installation
 
@@ -45,7 +45,7 @@ Grab a cup of <i class="fa fa-coffee"></i> and write some <i class="fa fa-code">
 
 ## Known limitations
 
-- Does not work with Markdown Extra enabled (conflicts with definition lists which start with a colon)
+- Conflicts with Markdown Extra definition lists. If Markdown Extra is enabled, icons cannnot be placed at the start of a line and must have at least one non-whitespace character preceeding them.
 - Icon names are not validated, so html tags are created even for non-existent icons like `:fa-not-a-real-icon:``
 
 ## Alternatives
