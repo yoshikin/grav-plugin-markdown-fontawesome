@@ -34,7 +34,7 @@ class MarkdownFontAwesomePlugin extends Plugin
                         'name' => 'i',
                         'text' => '',
                         'attributes' => array(
-                            'class' => 'fa fa-'.$matches[1],
+                            'class' => 'fa fas fa-'.$matches[1],
                         ),
                     ),
                 );
